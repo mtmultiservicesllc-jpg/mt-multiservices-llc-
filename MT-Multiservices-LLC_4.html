@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MT Multiservices LLC | DBE Certified | Atlanta GA</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A84C;--gl:#E8D08A;--gd:rgba(201,168,76,.13);--dark:#080808;--d2:#101010;--d3:#181818;--d4:#202020;--w:#F0EDE6;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--dark);color:var(--w);font-family:'Montserrat',sans-serif;overflow-x:hidden;}
+
+/* ===== LANGUAGE SYSTEM ===== */
+.hide{display:none!important;}
+
+.lang-bar{position:fixed;top:16px;right:24px;z-index:9999;display:flex;gap:6px;}
+.lb{background:transparent;border:1px solid rgba(201,168,76,.5);color:rgba(201,168,76,.7);padding:5px 14px;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:3px;cursor:pointer;transition:all .3s;text-transform:uppercase;}
+.lb.on,.lb:hover{background:var(--gold);color:#080808;border-color:var(--gold);}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,8,8,.97);border-bottom:1px solid rgba(201,168,76,.1);}
+.logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--gold);text-decoration:none;letter-spacing:1px;white-space:nowrap;}
+.logo span{color:var(--w);font-weight:400;font-size:18px;}
+.nl{display:flex;gap:28px;list-style:none;padding-right:100px;}
+.nl a{color:var(--w);text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.6;transition:all .3s;white-space:nowrap;}
+.nl a:hover{opacity:1;color:var(--gold);}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 60px 80px;}
+.hbg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 65% 40%,rgba(201,168,76,.07),transparent 70%),radial-gradient(ellipse 50% 40% at 10% 90%,rgba(30,77,53,.1),transparent 60%),#080808;}
+.hgr{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.025) 1px,transparent 1px);background-size:80px 80px;}
+.hc{position:relative;z-index:2;max-width:780px;}
+.badge{display:inline-flex;align-items:center;gap:10px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);padding:7px 20px;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:36px;}
+.dot{width:5px;height:5px;background:var(--gold);border-radius:50%;animation:blink 2s infinite;flex-shrink:0;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.2;}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(50px,7vw,90px);font-weight:900;line-height:.95;margin-bottom:28px;}
+.hero h1 .g{color:var(--gold);display:block;}
+.hero h1 .t{font-weight:400;font-style:italic;}
+.hd{font-size:17px;line-height:1.8;opacity:.65;max-width:580px;margin-bottom:48px;font-weight:300;}
+.hb{display:flex;gap:16px;flex-wrap:wrap;}
+.btn{background:var(--gold);color:#080808;padding:16px 38px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s;}
+.btn:hover{background:var(--gl);transform:translateY(-3px);}
+.btn2{background:transparent;color:var(--w);padding:16px 38px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(255,255,255,.2);text-decoration:none;display:inline-block;transition:all .3s;}
+.btn2:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px);}
+.hr{position:absolute;right:60px;top:50%;transform:translateY(-50%);z-index:2;display:flex;flex-direction:column;gap:12px;}
+.hcp{background:var(--d3);border:1px solid rgba(201,168,76,.2);padding:18px 26px;display:flex;align-items:center;gap:14px;min-width:196px;}
+.hcp-i{font-size:22px;}
+.hcp-n{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:var(--gold);}
+.hcp-l{font-size:9px;letter-spacing:2px;text-transform:uppercase;opacity:.45;margin-top:2px;}
+
+/* TICKER */
+.tw{background:var(--gold);padding:11px 0;overflow:hidden;}
+.tk{display:flex;animation:tick 35s linear infinite;white-space:nowrap;}
+.ti{color:#080808;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;padding:0 32px;}
+.ts{color:rgba(0,0,0,.3);padding:0 4px;}
+@keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* STATS */
+.stats{background:var(--d2);padding:56px 60px;display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid rgba(201,168,76,.1);}
+.stat{text-align:center;padding:18px;border-right:1px solid rgba(255,255,255,.06);}
+.stat:last-child{border-right:none;}
+.sv{font-family:'Playfair Display',serif;font-size:42px;font-weight:900;color:var(--gold);line-height:1;}
+.sl{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;opacity:.4;margin-top:7px;}
+
+/* SECTION */
+section{padding:100px 60px;}
+.stag{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:14px;}
+.stag::before{content:'';width:28px;height:1px;background:var(--gold);}
+.stit{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,54px);font-weight:700;line-height:1.1;margin-bottom:18px;}
+.stit em{font-style:normal;color:var(--gold);}
+.sdes{font-size:16px;line-height:1.85;opacity:.6;max-width:620px;font-weight:300;}
+
+/* DOMAINS */
+.dom{background:var(--dark);}
+.di{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-bottom:72px;}
+.dg{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.dc{background:var(--d3);padding:40px 34px;position:relative;overflow:hidden;transition:all .4s;border-bottom:3px solid transparent;}
+.dc:hover{background:var(--d4);border-bottom-color:var(--gold);transform:translateY(-5px);}
+.dc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.3),transparent);}
+.dn{font-family:'Playfair Display',serif;font-size:52px;font-weight:900;color:rgba(201,168,76,.07);line-height:1;margin-bottom:10px;}
+.dic{font-size:36px;margin-bottom:18px;}
+.dtt{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:12px;}
+.dd{font-size:13px;line-height:1.75;opacity:.5;font-weight:300;margin-bottom:18px;}
+.dts{display:flex;flex-wrap:wrap;gap:7px;}
+.dt{background:var(--gd);border:1px solid rgba(201,168,76,.2);color:var(--gold);font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:4px 9px;}
+
+/* SERVICES */
+.svs{background:var(--d2);}
+.sh{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:60px;}
+.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+.sc{background:var(--d3);padding:34px 26px;transition:all .35s;position:relative;overflow:hidden;}
+.sc::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--gold);transition:width .35s;}
+.sc:hover::after{width:100%;}
+.sc:hover{background:#1c1c1c;transform:translateY(-4px);}
+.sico{font-size:30px;margin-bottom:16px;}
+.sn{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;margin-bottom:9px;}
+.sd{font-size:12px;line-height:1.7;opacity:.5;font-weight:300;}
+
+/* WIN */
+.win{background:var(--dark);}
+.wg{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin-top:60px;}
+.wc{background:var(--d3);padding:44px 40px;position:relative;overflow:hidden;}
+.wc.ft{background:linear-gradient(135deg,rgba(201,168,76,.1),rgba(201,168,76,.03));border:1px solid rgba(201,168,76,.25);}
+.wn{font-family:'Playfair Display',serif;font-size:72px;font-weight:900;color:rgba(201,168,76,.06);line-height:1;position:absolute;top:18px;right:26px;}
+.wt{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--gold);margin-bottom:14px;}
+.wd{font-size:14px;line-height:1.85;opacity:.6;font-weight:300;}
+.wl{margin-top:18px;display:flex;flex-direction:column;gap:9px;}
+.wl li{font-size:13px;opacity:.6;font-weight:300;padding-left:18px;position:relative;list-style:none;}
+.wl li::before{content:'→';position:absolute;left:0;color:var(--gold);font-size:11px;}
+
+/* CERTS */
+.cts{background:var(--d2);}
+.cl{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center;margin-top:60px;}
+.clf{display:flex;flex-direction:column;gap:18px;}
+.cr{background:var(--d3);border-left:3px solid var(--gold);padding:26px 30px;display:flex;gap:18px;align-items:flex-start;transition:transform .3s;}
+.cr:hover{transform:translateX(10px);}
+.cri{font-size:30px;flex-shrink:0;}
+.crt{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--gold);margin-bottom:5px;}
+.crd{font-size:13px;opacity:.55;font-weight:300;line-height:1.6;}
+.crg{background:var(--d3);border:1px solid rgba(201,168,76,.15);padding:52px 44px;text-align:center;}
+.crl{font-family:'Playfair Display',serif;font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:12px;}
+.crq{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;line-height:1.45;margin-bottom:28px;font-style:italic;}
+.cdv{width:36px;height:1px;background:var(--gold);margin:18px auto;}
+.cnm{font-size:14px;color:var(--gold);font-weight:600;}
+.cro{font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:.45;margin-top:5px;}
+
+/* WHY */
+.why{background:var(--dark);}
+.wyg{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:60px;}
+.wyc{background:var(--d3);padding:40px 32px;text-align:center;transition:all .35s;}
+.wyc:hover{background:var(--d4);transform:translateY(-5px);}
+.wyi{font-size:40px;margin-bottom:22px;}
+.wyt{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--gold);margin-bottom:12px;}
+.wyd{font-size:13px;line-height:1.8;opacity:.55;font-weight:300;}
+
+/* CONTACT */
+.cont{background:var(--d2);}
+.clo{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;margin-top:60px;}
+.cin{display:flex;flex-direction:column;gap:32px;}
+.cit{display:flex;gap:16px;align-items:flex-start;}
+.cic{width:48px;height:48px;flex-shrink:0;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;font-size:19px;}
+.clb{font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:.4;margin-bottom:4px;}
+.cvl{font-size:15px;color:var(--gold);font-weight:500;}
+.ctb{margin-top:4px;}
+.cts-t{font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:.4;margin-bottom:12px;}
+.ctg{display:flex;flex-wrap:wrap;gap:7px;}
+.ctk{background:var(--gd);border:1px solid rgba(201,168,76,.2);color:var(--gold);font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 11px;}
+.cf{display:flex;flex-direction:column;gap:13px;}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
+.fg{display:flex;flex-direction:column;gap:6px;}
+.fl{font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:.4;}
+.fi,.fa,.fs{background:var(--d3);border:1px solid rgba(255,255,255,.08);color:var(--w);padding:13px 16px;font-family:'Montserrat',sans-serif;font-size:14px;outline:none;transition:border-color .3s;width:100%;}
+.fi:focus,.fa:focus,.fs:focus{border-color:var(--gold);}
+.fa{resize:vertical;min-height:100px;}
+.fs{appearance:none;cursor:pointer;}
+
+/* FOOTER */
+footer{background:var(--dark);border-top:1px solid rgba(201,168,76,.12);padding:44px 60px;}
+.ftp{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:36px;flex-wrap:wrap;gap:36px;}
+.flg{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--gold);}
+.flg span{color:var(--w);font-weight:400;}
+.fsb{font-size:11px;letter-spacing:3px;text-transform:uppercase;opacity:.35;margin-top:5px;}
+.fnv{display:flex;flex-direction:column;gap:9px;}
+.fnv a{color:var(--w);text-decoration:none;font-size:13px;opacity:.45;transition:all .3s;}
+.fnv a:hover{opacity:.9;color:var(--gold);}
+.fcs{display:flex;flex-direction:column;gap:7px;align-items:flex-end;}
+.fc{background:var(--gd);border:1px solid rgba(201,168,76,.25);color:var(--gold);font-size:9px;letter-spacing:3px;text-transform:uppercase;padding:5px 13px;}
+.fbt{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap;gap:14px;}
+.fcp{font-size:11px;opacity:.3;letter-spacing:1px;}
+.fem{font-size:12px;color:var(--gold);opacity:.6;}
+
+@media(max-width:960px){
+  nav{padding:18px 22px;}.nl{display:none;}
+  .hero{padding:100px 22px 60px;}.hr{display:none;}
+  .stats{grid-template-columns:repeat(3,1fr);padding:36px 22px;}
+  section{padding:64px 22px;}
+  .di,.dg,.sh,.sg,.wg,.cl,.wyg,.clo{grid-template-columns:1fr;gap:22px;}
+  .fr{grid-template-columns:1fr;}
+  footer{padding:36px 22px;}.ftp,.fbt{flex-direction:column;gap:20px;}.fcs{align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <button class="lb on" onclick="setLang('en')" id="btn-en">EN</button>
+  <button class="lb" onclick="setLang('fr')" id="btn-fr">FR</button>
+</div>
+
+<nav>
+  <a href="#" class="logo">MT <span>Multiservices LLC</span></a>
+  <ul class="nl">
+    <li><a href="#domains"><span data-en>Sectors</span><span data-fr>Secteurs</span></a></li>
+    <li><a href="#services"><span data-en>Services</span><span data-fr>Services</span></a></li>
+    <li><a href="#win"><span data-en>How We Win</span><span data-fr>Comment Gagner</span></a></li>
+    <li><a href="#certifications"><span data-en>Certifications</span><span data-fr>Certifications</span></a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hbg"></div><div class="hgr"></div>
+  <div class="hc">
+    <div class="badge">
+      <span class="dot"></span>
+      <span data-en>DBE Certified &middot; SAM.gov Registered &middot; Atlanta, Georgia</span>
+      <span data-fr>Certifi&eacute; DBE &middot; Enregistr&eacute; SAM.gov &middot; Atlanta, G&eacute;orgie</span>
+    </div>
+    <h1>
+      <span class="t" data-en>Your Certified</span>
+      <span class="t" data-fr>Votre Partenaire</span>
+      <span class="g" data-en>DBE Partner</span>
+      <span class="g" data-fr>DBE Certifi&eacute;</span>
+      <span class="t" data-en>In Every Sector</span>
+      <span class="t" data-fr>Dans Tous les Secteurs</span>
+    </h1>
+    <p class="hd" data-en>MT Multiservices LLC is a certified DBE multiservice subcontractor serving construction, schools, local government, federal agencies, airports, and facility services across Georgia.</p>
+    <p class="hd" data-fr>MT Multiservices LLC est un sous-traitant multiservices certifi&eacute; DBE servant la construction, les &eacute;coles, le gouvernement local, les agences f&eacute;d&eacute;rales, les a&eacute;roports et les services aux installations en G&eacute;orgie.</p>
+    <div class="hb">
+      <a href="#contact" class="btn" data-en>Work With Us</a>
+      <a href="#contact" class="btn" data-fr>Travaillons Ensemble</a>
+      <a href="#domains" class="btn2" data-en>Our Sectors</a>
+      <a href="#domains" class="btn2" data-fr>Nos Secteurs</a>
+    </div>
+  </div>
+  <div class="hr">
+    <div class="hcp"><div class="hcp-i">&#127885;</div><div><div class="hcp-n">DBE</div><div class="hcp-l" data-en>Federal Certification</div><div class="hcp-l" data-fr>Certification F&eacute;d&eacute;rale</div></div></div>
+    <div class="hcp"><div class="hcp-i">&#127482;&#127480;</div><div><div class="hcp-n">SAM.gov</div><div class="hcp-l" data-en>Gov. Registered</div><div class="hcp-l" data-fr>Enregistr&eacute; Gov.</div></div></div>
+    <div class="hcp"><div class="hcp-i">&#127959;</div><div><div class="hcp-n">6 Sectors</div><div class="hcp-l" data-en>All Major Sectors</div><div class="hcp-l" data-fr>Tous les Secteurs</div></div></div>
+    <div class="hcp"><div class="hcp-i">&#128205;</div><div><div class="hcp-n">Atlanta</div><div class="hcp-l" data-en>Georgia Based</div><div class="hcp-l" data-fr>Bas&eacute; en G&eacute;orgie</div></div></div>
+  </div>
+</section>
+
+<div class="tw"><div class="tk">
+  <span class="ti">DBE Certified</span><span class="ts">&#9670;</span>
+  <span class="ti">Construction</span><span class="ts">&#9670;</span>
+  <span class="ti">School Contracts</span><span class="ts">&#9670;</span>
+  <span class="ti">Local Government</span><span class="ts">&#9670;</span>
+  <span class="ti">Federal Contracts</span><span class="ts">&#9670;</span>
+  <span class="ti">Airport Services</span><span class="ts">&#9670;</span>
+  <span class="ti">Facility Management</span><span class="ts">&#9670;</span>
+  <span class="ti">SAM.gov Registered</span><span class="ts">&#9670;</span>
+  <span class="ti">Atlanta Georgia</span><span class="ts">&#9670;</span>
+  <span class="ti">MT Multiservices LLC</span><span class="ts">&#9670;</span>
+  <span class="ti">DBE Certified</span><span class="ts">&#9670;</span>
+  <span class="ti">Construction</span><span class="ts">&#9670;</span>
+  <span class="ti">School Contracts</span><span class="ts">&#9670;</span>
+  <span class="ti">Local Government</span><span class="ts">&#9670;</span>
+  <span class="ti">Federal Contracts</span><span class="ts">&#9670;</span>
+  <span class="ti">Airport Services</span><span class="ts">&#9670;</span>
+  <span class="ti">Facility Management</span><span class="ts">&#9670;</span>
+  <span class="ti">SAM.gov Registered</span><span class="ts">&#9670;</span>
+  <span class="ti">Atlanta Georgia</span><span class="ts">&#9670;</span>
+  <span class="ti">MT Multiservices LLC</span><span class="ts">&#9670;</span>
+</div></div>
+
+<div class="stats">
+  <div class="stat"><div class="sv">DBE</div><div class="sl" data-en>Certified</div><div class="sl" data-fr>Certifi&eacute;</div></div>
+  <div class="stat"><div class="sv">SAM</div><div class="sl" data-en>Gov. Registered</div><div class="sl" data-fr>Enregistr&eacute;</div></div>
+  <div class="stat"><div class="sv">6</div><div class="sl" data-en>Sectors</div><div class="sl" data-fr>Secteurs</div></div>
+  <div class="stat"><div class="sv">ATL</div><div class="sl" data-en>Airport Ready</div><div class="sl" data-fr>A&eacute;roport Pr&ecirc;t</div></div>
+  <div class="stat"><div class="sv">GA</div><div class="sl" data-en>Local &amp; Federal</div><div class="sl" data-fr>Local &amp; F&eacute;d&eacute;ral</div></div>
+</div>
+
+<section id="domains" class="dom">
+  <div class="di">
+    <div>
+      <div class="stag" data-en>Our Sectors</div><div class="stag" data-fr>Nos Secteurs</div>
+      <h2 class="stit" data-en>We Operate Across<br><em>Every Major Sector</em></h2>
+      <h2 class="stit" data-fr>Nous Op&eacute;rons dans<br><em>Tous les Secteurs Majeurs</em></h2>
+    </div>
+    <p class="sdes" data-en>As a certified DBE subcontractor, MT Multiservices LLC supports prime contractors across construction, education, local government, federal agencies, airports, and facility services anywhere in Georgia.</p>
+    <p class="sdes" data-fr>En tant que sous-traitant DBE certifi&eacute;, MT Multiservices LLC soutient les grands contractors dans la construction, l'&eacute;ducation, le gouvernement local, les agences f&eacute;d&eacute;rales, les a&eacute;roports et les services aux installations partout en G&eacute;orgie.</p>
+  </div>
+  <div class="dg">
+    <div class="dc"><div class="dn">01</div><div class="dic">&#127959;</div><div class="dtt" data-en>Construction</div><div class="dtt" data-fr>Construction</div><p class="dd" data-en>Supporting general contractors on public and private construction projects requiring certified DBE participation for compliance and diversity goals.</p><p class="dd" data-fr>Soutenir les entrepreneurs g&eacute;n&eacute;raux sur des projets de construction n&eacute;cessitant la participation de sous-traitants DBE certifi&eacute;s.</p><div class="dts"><span class="dt" data-en>Public Works</span><span class="dt" data-en>Infrastructure</span><span class="dt" data-en>Building</span><span class="dt" data-fr>Travaux Publics</span><span class="dt" data-fr>Infrastructure</span><span class="dt" data-fr>B&acirc;timent</span></div></div>
+    <div class="dc"><div class="dn">02</div><div class="dic">&#127979;</div><div class="dtt" data-en>School Contracts</div><div class="dtt" data-fr>Contrats Scolaires</div><p class="dd" data-en>Facility services, maintenance, custodial, and support to school districts and educational institutions across Georgia.</p><p class="dd" data-fr>Services aux installations, maintenance et conciergerie aux districts scolaires et &eacute;tablissements d'enseignement de G&eacute;orgie.</p><div class="dts"><span class="dt" data-en>School Districts</span><span class="dt" data-en>Universities</span><span class="dt" data-en>Maintenance</span><span class="dt" data-fr>Districts Scolaires</span><span class="dt" data-fr>Universit&eacute;s</span><span class="dt" data-fr>Maintenance</span></div></div>
+    <div class="dc"><div class="dn">03</div><div class="dic">&#127963;</div><div class="dtt" data-en>Local Government</div><div class="dtt" data-fr>Gouvernement Local</div><p class="dd" data-en>Serving city and county contracts for Atlanta, Fulton County, DeKalb County, and municipalities across Georgia.</p><p class="dd" data-fr>Servir les contrats pour Atlanta, le comt&eacute; de Fulton, le comt&eacute; de DeKalb et les municipalit&eacute;s de G&eacute;orgie.</p><div class="dts"><span class="dt" data-en>City of Atlanta</span><span class="dt" data-en>County Contracts</span><span class="dt" data-en>Municipal</span><span class="dt" data-fr>Ville d'Atlanta</span><span class="dt" data-fr>Comt&eacute;s</span><span class="dt" data-fr>Municipal</span></div></div>
+    <div class="dc"><div class="dn">04</div><div class="dic">&#127482;&#127480;</div><div class="dtt" data-en>Federal Government</div><div class="dtt" data-fr>Gouvernement F&eacute;d&eacute;ral</div><p class="dd" data-en>SAM.gov registered and ready for federal contracts. Supporting prime contractors on GSA, DoD, and federal agency projects.</p><p class="dd" data-fr>Enregistr&eacute; sur SAM.gov et pr&ecirc;t pour les contrats f&eacute;d&eacute;raux. Soutenir les contractors sur les projets GSA, DoD et agences f&eacute;d&eacute;rales.</p><div class="dts"><span class="dt" data-en>GSA Contracts</span><span class="dt" data-en>DoD Projects</span><span class="dt" data-en>SAM.gov</span><span class="dt" data-fr>Contrats GSA</span><span class="dt" data-fr>Projets DoD</span><span class="dt" data-fr>SAM.gov</span></div></div>
+    <div class="dc"><div class="dn">05</div><div class="dic">&#9992;</div><div class="dtt" data-en>Airport &amp; Aviation</div><div class="dtt" data-fr>A&eacute;roport &amp; Aviation</div><p class="dd" data-en>Specialized experience with Hartsfield-Jackson Atlanta International Airport contracts where DBE participation is strictly required.</p><p class="dd" data-fr>Exp&eacute;rience sp&eacute;cialis&eacute;e avec les contrats de l'a&eacute;roport Hartsfield-Jackson o&ugrave; la participation DBE est strictement requise.</p><div class="dts"><span class="dt" data-en>ATL Airport</span><span class="dt" data-en>DOA Contracts</span><span class="dt" data-en>O&amp;M Services</span><span class="dt" data-fr>A&eacute;roport ATL</span><span class="dt" data-fr>Contrats DOA</span><span class="dt" data-fr>Services O&amp;M</span></div></div>
+    <div class="dc"><div class="dn">06</div><div class="dic">&#127970;</div><div class="dtt" data-en>Facility Services</div><div class="dtt" data-fr>Services aux Installations</div><p class="dd" data-en>Comprehensive operations and maintenance for commercial, government, and institutional properties.</p><p class="dd" data-fr>Exploitation et maintenance compl&egrave;tes pour propri&eacute;t&eacute;s commerciales, gouvernementales et institutionnelles.</p><div class="dts"><span class="dt" data-en>O&amp;M</span><span class="dt" data-en>Custodial</span><span class="dt" data-en>Landscaping</span><span class="dt" data-fr>Exploitation</span><span class="dt" data-fr>Conciergerie</span><span class="dt" data-fr>Paysagisme</span></div></div>
+  </div>
+</section>
+
+<section id="services" class="svs">
+  <div class="sh">
+    <div><div class="stag" data-en>What We Deliver</div><div class="stag" data-fr>Ce Que Nous Livrons</div><h2 class="stit" data-en>Our <em>Core Services</em></h2><h2 class="stit" data-fr>Nos <em>Services Principaux</em></h2></div>
+    <p class="sdes" data-en>From janitorial to construction support, our multiservice capabilities let us serve as a single certified DBE partner across multiple service lines.</p>
+    <p class="sdes" data-fr>De la conciergerie au soutien &agrave; la construction, nos capacit&eacute;s multiservices nous permettent de servir comme partenaire DBE certifi&eacute; unique sur plusieurs lignes de services.</p>
+  </div>
+  <div class="sg">
+    <div class="sc"><div class="sico">&#129529;</div><div class="sn" data-en>Custodial &amp; Janitorial</div><div class="sn" data-fr>Conciergerie &amp; Nettoyage</div><p class="sd" data-en>Professional cleaning for airports, schools, government buildings. 24/7.</p><p class="sd" data-fr>Nettoyage professionnel pour a&eacute;roports, &eacute;coles, b&acirc;timents gouvernementaux. 24h/24.</p></div>
+    <div class="sc"><div class="sico">&#127807;</div><div class="sn" data-en>Landscaping &amp; Grounds</div><div class="sn" data-fr>Paysagisme &amp; Terrains</div><p class="sd" data-en>Grounds maintenance, irrigation, and exterior care for large facilities.</p><p class="sd" data-fr>Entretien des espaces verts, irrigation et soin ext&eacute;rieur pour grandes installations.</p></div>
+    <div class="sc"><div class="sico">&#129695;</div><div class="sn" data-en>Window Cleaning</div><div class="sn" data-fr>Nettoyage de Vitres</div><p class="sd" data-en>Interior and exterior window services for commercial and government buildings.</p><p class="sd" data-fr>Services de vitres pour b&acirc;timents commerciaux et gouvernementaux.</p></div>
+    <div class="sc"><div class="sico">&#128027;</div><div class="sn" data-en>Pest Control</div><div class="sn" data-fr>Lutte Antiparasitaire</div><p class="sd" data-en>Integrated pest management compliant with airport and government safety standards.</p><p class="sd" data-fr>Gestion des nuisibles conforme aux normes de s&eacute;curit&eacute; a&eacute;roportuaires et gouvernementales.</p></div>
+    <div class="sc"><div class="sico">&#128084;</div><div class="sn" data-en>Uniform Services</div><div class="sn" data-fr>Services d'Uniformes</div><p class="sd" data-en>Uniform supply and management for facility teams and government contractors.</p><p class="sd" data-fr>Approvisionnement et gestion d'uniformes pour &eacute;quipes et contractants gouvernementaux.</p></div>
+    <div class="sc"><div class="sico">&#128295;</div><div class="sn" data-en>General Maintenance</div><div class="sn" data-fr>Maintenance G&eacute;n&eacute;rale</div><p class="sd" data-en>Preventive and corrective maintenance for buildings, schools, and government facilities.</p><p class="sd" data-fr>Maintenance pr&eacute;ventive et corrective pour b&acirc;timents, &eacute;coles et installations gouvernementales.</p></div>
+    <div class="sc"><div class="sico">&#127959;</div><div class="sn" data-en>Construction Support</div><div class="sn" data-fr>Soutien Construction</div><p class="sd" data-en>Site support for general contractors on public projects requiring DBE participation.</p><p class="sd" data-fr>Soutien sur site pour entrepreneurs g&eacute;n&eacute;raux sur projets publics n&eacute;cessitant la participation DBE.</p></div>
+    <div class="sc"><div class="sico">&#128269;</div><div class="sn" data-en>Mystery Shopping</div><div class="sn" data-fr>Mystery Shopping</div><p class="sd" data-en>Quality assurance programs for airport and government facility contracts.</p><p class="sd" data-fr>Programmes d'assurance qualit&eacute; pour contrats d'a&eacute;roport et d'installations gouvernementales.</p></div>
+  </div>
+</section>
+
+<section id="win" class="win">
+  <div class="stag" data-en>Our Value</div><div class="stag" data-fr>Notre Valeur</div>
+  <h2 class="stit" data-en>Why Prime Contractors <em>Need Us to Win</em></h2>
+  <h2 class="stit" data-fr>Pourquoi les Grands Contractors <em>Ont Besoin de Nous</em></h2>
+  <p class="sdes" data-en>In government contracting, DBE participation is not optional — it's the difference between winning and losing a bid.</p>
+  <p class="sdes" data-fr>Dans les contrats gouvernementaux, la participation DBE n'est pas optionnelle — c'est la diff&eacute;rence entre gagner et perdre un appel d'offres.</p>
+  <div class="wg">
+    <div class="wc ft"><div class="wn">01</div><div class="wt" data-en>We Fulfill DBE Requirements</div><div class="wt" data-fr>Nous Remplissons les Exigences DBE</div><p class="wd" data-en>Government contracts require prime contractors to spend a percentage with certified DBE businesses. Without us, your bid is incomplete.</p><p class="wd" data-fr>Les contrats gouvernementaux exigent que les contractors d&eacute;pensent un pourcentage avec des entreprises DBE certifi&eacute;es. Sans nous, votre offre est incompl&egrave;te.</p><ul class="wl"><li data-en>Federal contracts require 5-15% DBE spend</li><li data-en>City of Atlanta has strict diversity mandates</li><li data-en>School districts require minority participation</li><li data-fr>Les contrats f&eacute;d&eacute;raux exigent 5-15% de d&eacute;penses DBE</li><li data-fr>La ville d'Atlanta a des mandats de diversit&eacute; stricts</li><li data-fr>Les districts scolaires exigent la participation minoritaire</li></ul></div>
+    <div class="wc"><div class="wn">02</div><div class="wt" data-en>Local, Ready &amp; Verified</div><div class="wt" data-fr>Local, Pr&ecirc;t &amp; V&eacute;rifi&eacute;</div><p class="wd" data-en>Based in Atlanta, SAM.gov registered, DBE certified — immediately deployable on any Georgia contract with zero delays.</p><p class="wd" data-fr>Bas&eacute;s &agrave; Atlanta, enregistr&eacute;s SAM.gov, certifi&eacute;s DBE — imm&eacute;diatement d&eacute;ployables sur tout contrat en G&eacute;orgie sans d&eacute;lais.</p><ul class="wl"><li data-en>Atlanta-based, no travel delays</li><li data-en>SAM.gov active registration</li><li data-en>DBE certification ready to document</li><li data-fr>Bas&eacute; &agrave; Atlanta, aucun d&eacute;lai</li><li data-fr>Enregistrement SAM.gov actif</li><li data-fr>Certification DBE pr&ecirc;te &agrave; documenter</li></ul></div>
+    <div class="wc"><div class="wn">03</div><div class="wt" data-en>One Partner, Many Services</div><div class="wt" data-fr>Un Partenaire, Plusieurs Services</div><p class="wd" data-en>One certified DBE partner covering custodial, landscaping, maintenance, pest control and more under one contract.</p><p class="wd" data-fr>Un partenaire DBE certifi&eacute; couvrant la conciergerie, le paysagisme, la maintenance et plus sous un seul contrat.</p><ul class="wl"><li data-en>One DBE partner, multiple services</li><li data-en>Simplified compliance reporting</li><li data-en>Consistent quality across all services</li><li data-fr>Un partenaire, plusieurs services</li><li data-fr>Rapports de conformit&eacute; simplifi&eacute;s</li><li data-fr>Qualit&eacute; constante</li></ul></div>
+    <div class="wc ft"><div class="wn">04</div><div class="wt" data-en>We Help You Score Higher</div><div class="wt" data-fr>Nous Vous Aidons &agrave; Mieux Scorer</div><p class="wd" data-en>Government bid evaluations score diversity participation. A strong DBE plan with MT Multiservices LLC directly increases your evaluation score.</p><p class="wd" data-fr>Les &eacute;valuations d'appels d'offres notent la participation &agrave; la diversit&eacute;. Un plan DBE solide avec MT Multiservices LLC augmente votre score.</p><ul class="wl"><li data-en>Higher diversity scores = higher bid ranking</li><li data-en>Documented DBE plan strengthens proposals</li><li data-en>Local Atlanta presence adds community value</li><li data-fr>Meilleurs scores = meilleur classement</li><li data-fr>Plan DBE document&eacute; renforce les propositions</li><li data-fr>Pr&eacute;sence locale &agrave; Atlanta ajoute de la valeur</li></ul></div>
+  </div>
+</section>
+
+<section id="certifications" class="cts">
+  <div class="stag" data-en>Our Credentials</div><div class="stag" data-fr>Nos Accr&eacute;ditations</div>
+  <h2 class="stit" data-en>Certified, Registered, <em>&amp; Ready</em></h2>
+  <h2 class="stit" data-fr>Certifi&eacute;, Enregistr&eacute;, <em>&amp; Pr&ecirc;t</em></h2>
+  <div class="cl">
+    <div class="clf">
+      <div class="cr"><div class="cri">&#127885;</div><div><div class="crt">DBE — Disadvantaged Business Enterprise</div><p class="crd" data-en>Federally recognized certification qualifying MT Multiservices LLC to fulfill diversity requirements on government contracts at all levels.</p><p class="crd" data-fr>Certification f&eacute;d&eacute;rale qualifiant MT Multiservices LLC pour satisfaire aux exigences de diversit&eacute; sur les contrats gouvernementaux &agrave; tous les niveaux.</p></div></div>
+      <div class="cr"><div class="cri">&#127482;&#127480;</div><div><div class="crt">SAM.gov — System for Award Management</div><p class="crd" data-en>Active federal registration making MT Multiservices LLC immediately eligible for federal contract work, verifiable by any prime contractor.</p><p class="crd" data-fr>Enregistrement f&eacute;d&eacute;ral actif rendant MT Multiservices LLC imm&eacute;diatement &eacute;ligible pour les contrats f&eacute;d&eacute;raux, v&eacute;rifiable par tout contractor principal.</p></div></div>
+      <div class="cr"><div class="cri">&#127962;</div><div><div class="crt" data-en>Georgia LLC — Registered Business</div><div class="crt" data-fr>Georgia LLC — Entreprise Enregistr&eacute;e</div><p class="crd" data-en>Fully registered LLC in Georgia, compliant with all state and local requirements for government contracting.</p><p class="crd" data-fr>LLC enti&egrave;rement enregistr&eacute;e en G&eacute;orgie, conforme &agrave; toutes les exigences pour les contrats gouvernementaux.</p></div></div>
+    </div>
+    <div class="crg">
+      <div class="crl" data-en>A Message from Our Founder</div>
+      <div class="crl" data-fr>Un Message de Notre Fondateur</div>
+      <div class="crq" data-en>"Every certification we hold is a door we open — for our partners, for our community, and for the future of diverse business in Atlanta."</div>
+      <div class="crq" data-fr>"Chaque certification que nous d&eacute;tenons est une porte que nous ouvrons — pour nos partenaires, pour notre communaut&eacute;, et pour l'avenir des entreprises diversifi&eacute;es &agrave; Atlanta."</div>
+      <div class="cdv"></div>
+      <div class="cnm">Moussa Toure</div>
+      <div class="cro" data-en>Founder &amp; CEO, MT Multiservices LLC</div>
+      <div class="cro" data-fr>Fondateur &amp; PDG, MT Multiservices LLC</div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="stag" data-en>The Bigger Picture</div><div class="stag" data-fr>La Vue d'Ensemble</div>
+  <h2 class="stit" data-en>Why <em>DBE Certification</em> Changes Everything</h2>
+  <h2 class="stit" data-fr>Pourquoi la <em>Certification DBE</em> Change Tout</h2>
+  <div class="wyg">
+    <div class="wyc"><div class="wyi">&#128176;</div><div class="wyt" data-en>Billions in Opportunities</div><div class="wyt" data-fr>Des Milliards d'Opportunit&eacute;s</div><p class="wyd" data-en>Governments spend billions on contracts annually — a significant portion must go to certified DBE businesses. We are your key to this market.</p><p class="wyd" data-fr>Les gouvernements d&eacute;pensent des milliards en contrats — une part importante doit aller aux entreprises DBE certifi&eacute;es. Nous sommes votre cl&eacute; pour ce march&eacute;.</p></div>
+    <div class="wyc"><div class="wyi">&#9878;</div><div class="wyt" data-en>Legal Compliance</div><div class="wyt" data-fr>Conformit&eacute; L&eacute;gale</div><p class="wyd" data-en>Prime contractors who fail DBE goals risk bid disqualification and contract penalties. Partnering with us protects your business.</p><p class="wyd" data-fr>Les contractors qui ne remplissent pas les objectifs DBE risquent la disqualification et des p&eacute;nalit&eacute;s. Nous vous prot&eacute;geons.</p></div>
+    <div class="wyc"><div class="wyi">&#127807;</div><div class="wyt" data-en>Community Impact</div><div class="wyt" data-fr>Impact Communautaire</div><p class="wyd" data-en>Working with MT Multiservices LLC creates real economic opportunity in Atlanta's diverse communities.</p><p class="wyd" data-fr>Travailler avec MT Multiservices LLC cr&eacute;e de vraies opportunit&eacute;s &eacute;conomiques dans les communaut&eacute;s diversifi&eacute;es d'Atlanta.</p></div>
+  </div>
+</section>
+
+<section id="contact" class="cont">
+  <div class="stag" data-en>Get In Touch</div><div class="stag" data-fr>Contactez-Nous</div>
+  <h2 class="stit" data-en>Ready to <em>Win Together?</em></h2>
+  <h2 class="stit" data-fr>Pr&ecirc;ts &agrave; <em>Gagner Ensemble?</em></h2>
+  <div class="clo">
+    <div class="cin">
+      <p class="sdes" data-en>Whether you're a prime contractor seeking a certified DBE partner or a government agency looking for diverse suppliers — MT Multiservices LLC is ready.</p>
+      <p class="sdes" data-fr>Que vous soyez un grand contractor cherchant un partenaire DBE ou une agence gouvernementale — MT Multiservices LLC est pr&ecirc;t.</p>
+      <div class="cit"><div class="cic">&#9993;</div><div><div class="clb">Email</div><div class="cvl">mt.multiservices.llc&#64;gmail.com</div></div></div>
+      <div class="cit"><div class="cic">&#128205;</div><div><div class="clb" data-en>Location</div><div class="clb" data-fr>Localisation</div><div class="cvl">Atlanta, Georgia, USA</div></div></div>
+      <div class="cit"><div class="cic">&#127885;</div><div><div class="clb" data-en>Certifications</div><div class="clb" data-fr>Certifications</div><div class="cvl">DBE &middot; SAM.gov &middot; Georgia LLC</div></div></div>
+      <div class="ctb">
+        <div class="cts-t" data-en>Sectors We Serve</div><div class="cts-t" data-fr>Secteurs Que Nous Servons</div>
+        <div class="ctg">
+          <span class="ctk" data-en>Construction</span><span class="ctk" data-en>Schools</span><span class="ctk" data-en>Local Gov.</span><span class="ctk" data-en>Federal</span><span class="ctk" data-en>Airport</span><span class="ctk" data-en>Facilities</span>
+          <span class="ctk" data-fr>Construction</span><span class="ctk" data-fr>&Eacute;coles</span><span class="ctk" data-fr>Gov. Local</span><span class="ctk" data-fr>F&eacute;d&eacute;ral</span><span class="ctk" data-fr>A&eacute;roport</span><span class="ctk" data-fr>Installations</span>
+        </div>
+      </div>
+    </div>
+    <form class="cf" onsubmit="sub(event)">
+      <div class="fr">
+        <div class="fg"><label class="fl" data-en>First Name</label><label class="fl" data-fr>Pr&eacute;nom</label><input type="text" class="fi" placeholder="John" required></div>
+        <div class="fg"><label class="fl" data-en>Last Name</label><label class="fl" data-fr>Nom</label><input type="text" class="fi" placeholder="Smith" required></div>
+      </div>
+      <div class="fg"><label class="fl" data-en>Company</label><label class="fl" data-fr>Entreprise</label><input type="text" class="fi" placeholder="ABC Construction Inc."></div>
+      <div class="fg"><label class="fl" data-en>Email</label><label class="fl" data-fr>Courriel</label><input type="email" class="fi" placeholder="you@company.com" required></div>
+      <div class="fg">
+        <label class="fl" data-en>Contract Sector</label><label class="fl" data-fr>Secteur</label>
+        <select class="fs" id="se"><option value="">Select a sector...</option><option>Construction</option><option>Schools / Education</option><option>Local Government</option><option>Federal Government</option><option>Airport / Aviation</option><option>Facility Services</option><option>Other</option></select>
+        <select class="fs" id="sf" style="display:none"><option value="">S&eacute;lectionner un secteur...</option><option>Construction</option><option>&Eacute;coles / &Eacute;ducation</option><option>Gouvernement Local</option><option>Gouvernement F&eacute;d&eacute;ral</option><option>A&eacute;roport / Aviation</option><option>Services aux Installations</option><option>Autre</option></select>
+      </div>
+      <div class="fg"><label class="fl" data-en>Message</label><label class="fl" data-fr>Message</label><textarea class="fa" placeholder="Tell us about your project..."></textarea></div>
+      <button type="submit" class="btn" data-en style="width:100%;text-align:center">Send Message &#8594;</button>
+      <button type="submit" class="btn" data-fr style="width:100%;text-align:center">Envoyer &#8594;</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="ftp">
+    <div><div class="flg">MT <span>Multiservices LLC</span></div><div class="fsb" data-en>Certified DBE Subcontractor &middot; Atlanta, Georgia</div><div class="fsb" data-fr>Sous-Traitant DBE Certifi&eacute; &middot; Atlanta, G&eacute;orgie</div></div>
+    <div class="fnv">
+      <a href="#domains"><span data-en>Sectors</span><span data-fr>Secteurs</span></a>
+      <a href="#services"><span data-en>Services</span><span data-fr>Services</span></a>
+      <a href="#win"><span data-en>How We Win</span><span data-fr>Comment Gagner</span></a>
+      <a href="#certifications"><span data-en>Certifications</span><span data-fr>Certifications</span></a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="fcs"><span class="fc">DBE Certified</span><span class="fc">SAM.gov Registered</span><span class="fc">Georgia LLC</span><span class="fc">Atlanta Based</span></div>
+  </div>
+  <div class="fbt">
+    <div class="fcp">&copy; 2026 MT Multiservices LLC &middot; All Rights Reserved &middot; Atlanta, Georgia</div>
+    <div class="fem">mt.multiservices.llc&#64;gmail.com</div>
+  </div>
+</footer>
+
+<script>
+var currentLang = 'en';
+function setLang(l) {
+  currentLang = l;
+  // Hide all EN elements
+  var enEls = document.querySelectorAll('[data-en]');
+  var frEls = document.querySelectorAll('[data-fr]');
+  if (l === 'fr') {
+    enEls.forEach(function(el){ el.classList.add('hide'); });
+    frEls.forEach(function(el){ el.classList.remove('hide'); });
+    document.getElementById('se').style.display = 'none';
+    document.getElementById('sf').style.display = 'block';
+  } else {
+    enEls.forEach(function(el){ el.classList.remove('hide'); });
+    frEls.forEach(function(el){ el.classList.add('hide'); });
+    document.getElementById('se').style.display = 'block';
+    document.getElementById('sf').style.display = 'none';
+  }
+  document.getElementById('btn-en').classList.toggle('on', l === 'en');
+  document.getElementById('btn-fr').classList.toggle('on', l === 'fr');
+}
+// Initialize on load
+window.onload = function() { setLang('en'); };
+function sub(e) {
+  e.preventDefault();
+  var btns = e.target.querySelectorAll('button[type="submit"]');
+  btns.forEach(function(b) {
+    var o = b.textContent;
+    b.textContent = 'Sent!';
+    b.style.background = '#1E4D35';
+    setTimeout(function() { b.textContent = o; b.style.background = ''; }, 3000);
+  });
+}
+</script>
+</body>
+</html>
