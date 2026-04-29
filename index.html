@@ -9,23 +9,18 @@
 :root{--gold:#C9A84C;--gl:#E8D08A;--gd:rgba(201,168,76,.13);--dark:#080808;--d2:#101010;--d3:#181818;--d4:#202020;--w:#F0EDE6;}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{background:var(--dark);color:var(--w);font-family:'Montserrat',sans-serif;overflow-x:hidden;}
-
-/* ===== LANGUAGE SYSTEM ===== */
 .hide{display:none!important;}
-
 .lang-bar{position:fixed;top:16px;right:24px;z-index:9999;display:flex;gap:6px;}
 .lb{background:transparent;border:1px solid rgba(201,168,76,.5);color:rgba(201,168,76,.7);padding:5px 14px;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:3px;cursor:pointer;transition:all .3s;text-transform:uppercase;}
 .lb.on,.lb:hover{background:var(--gold);color:#080808;border-color:var(--gold);}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,8,8,.97);border-bottom:1px solid rgba(201,168,76,.1);}
 .logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--gold);text-decoration:none;letter-spacing:1px;white-space:nowrap;}
 .logo span{color:var(--w);font-weight:400;font-size:18px;}
 .nl{display:flex;gap:28px;list-style:none;padding-right:100px;}
 .nl a{color:var(--w);text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.6;transition:all .3s;white-space:nowrap;}
 .nl a:hover{opacity:1;color:var(--gold);}
-
-/* HERO */
+.nl a.land-link{color:var(--gold);opacity:1;border:1px solid rgba(201,168,76,.4);padding:4px 12px;}
+.nl a.land-link:hover{background:var(--gold);color:#080808;}
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 60px 80px;}
 .hbg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 65% 40%,rgba(201,168,76,.07),transparent 70%),radial-gradient(ellipse 50% 40% at 10% 90%,rgba(30,77,53,.1),transparent 60%),#080808;}
 .hgr{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.025) 1px,transparent 1px);background-size:80px 80px;}
@@ -47,30 +42,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 60px;display:f
 .hcp-i{font-size:22px;}
 .hcp-n{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:var(--gold);}
 .hcp-l{font-size:9px;letter-spacing:2px;text-transform:uppercase;opacity:.45;margin-top:2px;}
-
-/* TICKER */
 .tw{background:var(--gold);padding:11px 0;overflow:hidden;}
 .tk{display:flex;animation:tick 35s linear infinite;white-space:nowrap;}
 .ti{color:#080808;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;padding:0 32px;}
 .ts{color:rgba(0,0,0,.3);padding:0 4px;}
 @keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-
-/* STATS */
 .stats{background:var(--d2);padding:56px 60px;display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid rgba(201,168,76,.1);}
 .stat{text-align:center;padding:18px;border-right:1px solid rgba(255,255,255,.06);}
 .stat:last-child{border-right:none;}
 .sv{font-family:'Playfair Display',serif;font-size:42px;font-weight:900;color:var(--gold);line-height:1;}
 .sl{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;opacity:.4;margin-top:7px;}
-
-/* SECTION */
 section{padding:100px 60px;}
 .stag{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:14px;}
 .stag::before{content:'';width:28px;height:1px;background:var(--gold);}
 .stit{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,54px);font-weight:700;line-height:1.1;margin-bottom:18px;}
 .stit em{font-style:normal;color:var(--gold);}
 .sdes{font-size:16px;line-height:1.85;opacity:.6;max-width:620px;font-weight:300;}
-
-/* DOMAINS */
 .dom{background:var(--dark);}
 .di{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-bottom:72px;}
 .dg{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
@@ -83,8 +70,6 @@ section{padding:100px 60px;}
 .dd{font-size:13px;line-height:1.75;opacity:.5;font-weight:300;margin-bottom:18px;}
 .dts{display:flex;flex-wrap:wrap;gap:7px;}
 .dt{background:var(--gd);border:1px solid rgba(201,168,76,.2);color:var(--gold);font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:4px 9px;}
-
-/* SERVICES */
 .svs{background:var(--d2);}
 .sh{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:60px;}
 .sg{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
@@ -95,8 +80,6 @@ section{padding:100px 60px;}
 .sico{font-size:30px;margin-bottom:16px;}
 .sn{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;margin-bottom:9px;}
 .sd{font-size:12px;line-height:1.7;opacity:.5;font-weight:300;}
-
-/* WIN */
 .win{background:var(--dark);}
 .wg{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin-top:60px;}
 .wc{background:var(--d3);padding:44px 40px;position:relative;overflow:hidden;}
@@ -107,8 +90,6 @@ section{padding:100px 60px;}
 .wl{margin-top:18px;display:flex;flex-direction:column;gap:9px;}
 .wl li{font-size:13px;opacity:.6;font-weight:300;padding-left:18px;position:relative;list-style:none;}
 .wl li::before{content:'→';position:absolute;left:0;color:var(--gold);font-size:11px;}
-
-/* CERTS */
 .cts{background:var(--d2);}
 .cl{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center;margin-top:60px;}
 .clf{display:flex;flex-direction:column;gap:18px;}
@@ -123,8 +104,6 @@ section{padding:100px 60px;}
 .cdv{width:36px;height:1px;background:var(--gold);margin:18px auto;}
 .cnm{font-size:14px;color:var(--gold);font-weight:600;}
 .cro{font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:.45;margin-top:5px;}
-
-/* WHY */
 .why{background:var(--dark);}
 .wyg{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:60px;}
 .wyc{background:var(--d3);padding:40px 32px;text-align:center;transition:all .35s;}
@@ -132,8 +111,6 @@ section{padding:100px 60px;}
 .wyi{font-size:40px;margin-bottom:22px;}
 .wyt{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--gold);margin-bottom:12px;}
 .wyd{font-size:13px;line-height:1.8;opacity:.55;font-weight:300;}
-
-/* CONTACT */
 .cont{background:var(--d2);}
 .clo{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;margin-top:60px;}
 .cin{display:flex;flex-direction:column;gap:32px;}
@@ -154,7 +131,14 @@ section{padding:100px 60px;}
 .fa{resize:vertical;min-height:100px;}
 .fs{appearance:none;cursor:pointer;}
 
-/* FOOTER */
+/* LAND BANNER */
+.land-banner{background:linear-gradient(135deg,#1A3A2A,#0F2218);border-top:1px solid rgba(201,168,76,.2);border-bottom:1px solid rgba(201,168,76,.2);padding:28px 60px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.land-banner-text{display:flex;flex-direction:column;gap:4px;}
+.land-banner-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--gold);}
+.land-banner-sub{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.6;color:var(--w);}
+.land-banner-btn{background:var(--gold);color:#080808;padding:12px 28px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all .3s;white-space:nowrap;}
+.land-banner-btn:hover{background:var(--gl);}
+
 footer{background:var(--dark);border-top:1px solid rgba(201,168,76,.12);padding:44px 60px;}
 .ftp{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:36px;flex-wrap:wrap;gap:36px;}
 .flg{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--gold);}
@@ -163,12 +147,12 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,.12);padding:
 .fnv{display:flex;flex-direction:column;gap:9px;}
 .fnv a{color:var(--w);text-decoration:none;font-size:13px;opacity:.45;transition:all .3s;}
 .fnv a:hover{opacity:.9;color:var(--gold);}
+.fnv a.land-footer{color:var(--gold);opacity:.8;}
 .fcs{display:flex;flex-direction:column;gap:7px;align-items:flex-end;}
 .fc{background:var(--gd);border:1px solid rgba(201,168,76,.25);color:var(--gold);font-size:9px;letter-spacing:3px;text-transform:uppercase;padding:5px 13px;}
 .fbt{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap;gap:14px;}
 .fcp{font-size:11px;opacity:.3;letter-spacing:1px;}
 .fem{font-size:12px;color:var(--gold);opacity:.6;}
-
 @media(max-width:960px){
   nav{padding:18px 22px;}.nl{display:none;}
   .hero{padding:100px 22px 60px;}.hr{display:none;}
@@ -177,6 +161,7 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,.12);padding:
   .di,.dg,.sh,.sg,.wg,.cl,.wyg,.clo{grid-template-columns:1fr;gap:22px;}
   .fr{grid-template-columns:1fr;}
   footer{padding:36px 22px;}.ftp,.fbt{flex-direction:column;gap:20px;}.fcs{align-items:flex-start;}
+  .land-banner{padding:20px 22px;}
 }
 </style>
 </head>
@@ -194,6 +179,7 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,.12);padding:
     <li><a href="#services"><span data-en>Services</span><span data-fr>Services</span></a></li>
     <li><a href="#win"><span data-en>How We Win</span><span data-fr>Comment Gagner</span></a></li>
     <li><a href="#certifications"><span data-en>Certifications</span><span data-fr>Certifications</span></a></li>
+    <li><a href="/land" class="land-link"><span data-en>🏡 Land</span><span data-fr>🏡 Terrains</span></a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -253,6 +239,18 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,.12);padding:
   <span class="ti">Atlanta Georgia</span><span class="ts">&#9670;</span>
   <span class="ti">MT Multiservices LLC</span><span class="ts">&#9670;</span>
 </div></div>
+
+<!-- LAND WHOLESALING BANNER -->
+<div class="land-banner">
+  <div class="land-banner-text">
+    <div class="land-banner-title" data-en>🏡 Now Offering: Land Wholesaling in Georgia</div>
+    <div class="land-banner-title" data-fr>🏡 Nouveau : Achat-Revente de Terrains en Géorgie</div>
+    <div class="land-banner-sub" data-en>We buy vacant land fast · Walton County · Newton County · Greater Atlanta</div>
+    <div class="land-banner-sub" data-fr>Nous achetons des terrains rapidement · Comté de Walton · Newton · Grand Atlanta</div>
+  </div>
+  <a href="/land" class="land-banner-btn" data-en>View Land Page →</a>
+  <a href="/land" class="land-banner-btn" data-fr>Voir la Page Terrains →</a>
+</div>
 
 <div class="stats">
   <div class="stat"><div class="sv">DBE</div><div class="sl" data-en>Certified</div><div class="sl" data-fr>Certifi&eacute;</div></div>
@@ -356,8 +354,8 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,.12);padding:
     <div class="cin">
       <p class="sdes" data-en>Whether you're a prime contractor seeking a certified DBE partner or a government agency looking for diverse suppliers — MT Multiservices LLC is ready.</p>
       <p class="sdes" data-fr>Que vous soyez un grand contractor cherchant un partenaire DBE ou une agence gouvernementale — MT Multiservices LLC est pr&ecirc;t.</p>
-      <div class="cit"><div class="cic">&#9993;</div><div><div class="clb">Email</div><div class="cvl">mt.multiservices.llc&#64;gmail.com</div></div></div>
-      <div class="cit"><div class="cic">&#128205;</div><div><div class="clb" data-en>Location</div><div class="clb" data-fr>Localisation</div><div class="cvl">Atlanta, Georgia, USA</div></div></div>
+      <div class="cit"><div class="cic">&#9993;</div><div><div class="clb">Email</div><div class="cvl">mt.multiservices.llc@gmail.com</div></div></div>
+      <div class="cit"><div class="cic">&#128205;</div><div><div class="clb" data-en>Location</div><div class="clb" data-fr>Localisation</div><div class="cvl">Loganville, Georgia, USA</div></div></div>
       <div class="cit"><div class="cic">&#127885;</div><div><div class="clb" data-en>Certifications</div><div class="clb" data-fr>Certifications</div><div class="cvl">DBE &middot; SAM.gov &middot; Georgia LLC</div></div></div>
       <div class="ctb">
         <div class="cts-t" data-en>Sectors We Serve</div><div class="cts-t" data-fr>Secteurs Que Nous Servons</div>
@@ -388,19 +386,20 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,.12);padding:
 
 <footer>
   <div class="ftp">
-    <div><div class="flg">MT <span>Multiservices LLC</span></div><div class="fsb" data-en>Certified DBE Subcontractor &middot; Atlanta, Georgia</div><div class="fsb" data-fr>Sous-Traitant DBE Certifi&eacute; &middot; Atlanta, G&eacute;orgie</div></div>
+    <div><div class="flg">MT <span>Multiservices LLC</span></div><div class="fsb" data-en>Certified DBE Subcontractor &middot; Loganville, Georgia</div><div class="fsb" data-fr>Sous-Traitant DBE Certifi&eacute; &middot; Loganville, G&eacute;orgie</div></div>
     <div class="fnv">
       <a href="#domains"><span data-en>Sectors</span><span data-fr>Secteurs</span></a>
       <a href="#services"><span data-en>Services</span><span data-fr>Services</span></a>
       <a href="#win"><span data-en>How We Win</span><span data-fr>Comment Gagner</span></a>
       <a href="#certifications"><span data-en>Certifications</span><span data-fr>Certifications</span></a>
+      <a href="/land" class="land-footer"><span data-en>🏡 Land Wholesaling</span><span data-fr>🏡 Terrains</span></a>
       <a href="#contact">Contact</a>
     </div>
-    <div class="fcs"><span class="fc">DBE Certified</span><span class="fc">SAM.gov Registered</span><span class="fc">Georgia LLC</span><span class="fc">Atlanta Based</span></div>
+    <div class="fcs"><span class="fc">DBE Certified</span><span class="fc">SAM.gov Registered</span><span class="fc">Georgia LLC</span><span class="fc">Loganville Based</span></div>
   </div>
   <div class="fbt">
-    <div class="fcp">&copy; 2026 MT Multiservices LLC &middot; All Rights Reserved &middot; Atlanta, Georgia</div>
-    <div class="fem">mt.multiservices.llc&#64;gmail.com</div>
+    <div class="fcp">&copy; 2026 MT Multiservices LLC &middot; All Rights Reserved &middot; Loganville, Georgia</div>
+    <div class="fem">mt.multiservices.llc@gmail.com</div>
   </div>
 </footer>
 
@@ -408,7 +407,6 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,.12);padding:
 var currentLang = 'en';
 function setLang(l) {
   currentLang = l;
-  // Hide all EN elements
   var enEls = document.querySelectorAll('[data-en]');
   var frEls = document.querySelectorAll('[data-fr]');
   if (l === 'fr') {
@@ -425,14 +423,35 @@ function setLang(l) {
   document.getElementById('btn-en').classList.toggle('on', l === 'en');
   document.getElementById('btn-fr').classList.toggle('on', l === 'fr');
 }
-// Initialize on load
 window.onload = function() { setLang('en'); };
 function sub(e) {
   e.preventDefault();
-  var btns = e.target.querySelectorAll('button[type="submit"]');
+  var form = e.target;
+  var inputs = form.querySelectorAll('input, textarea, select');
+  var firstName = inputs[0].value;
+  var lastName = inputs[1].value;
+  var company = inputs[2].value;
+  var email = inputs[3].value;
+  var sector = document.getElementById('se').style.display !== 'none'
+    ? document.getElementById('se').value
+    : document.getElementById('sf').value;
+  var message = form.querySelector('textarea').value;
+
+  var subject = encodeURIComponent('DBE Partnership Inquiry — MT Multiservices LLC');
+  var body = encodeURIComponent(
+    'Name: ' + firstName + ' ' + lastName + '\n' +
+    'Company: ' + company + '\n' +
+    'Email: ' + email + '\n' +
+    'Sector: ' + sector + '\n\n' +
+    'Message:\n' + message
+  );
+
+  window.location.href = 'mailto:mt.multiservices.llc@gmail.com?subject=' + subject + '&body=' + body;
+
+  var btns = form.querySelectorAll('button[type="submit"]');
   btns.forEach(function(b) {
     var o = b.textContent;
-    b.textContent = 'Sent!';
+    b.textContent = 'Sent! ✓';
     b.style.background = '#1E4D35';
     setTimeout(function() { b.textContent = o; b.style.background = ''; }, 3000);
   });
